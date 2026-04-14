@@ -6,8 +6,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Tools from './components/Tools';
-import Steps from './components/Steps'; 
-import Pricing from './components/Pricing'; 
+import Steps from './components/Steps';
+import Pricing from './components/Pricing';
+import CTA from './components/CTA'; 
 import Footer from './components/Footer';
 
 export default function App() {
@@ -41,7 +42,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-base-100">
+    <div className="min-h-screen bg-base-100 selection:bg-primary/20">
       <ToastContainer position="bottom-right" autoClose={2000} />
       
       <Navbar cartCount={cart.length} onCartClick={handleCartClick} />
@@ -57,12 +58,12 @@ export default function App() {
           activeTab={activeTab}
           setActiveTab={setActiveTab}
         />
-        {/* New sections added below */}
         <Steps />
         <Pricing />
+        <CTA /> 
       </main>
       
-      <Footer />
+      <Footer /> 
     </div>
   );
 }
