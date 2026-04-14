@@ -6,12 +6,13 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Tools from './components/Tools';
+import Steps from './components/Steps'; 
+import Pricing from './components/Pricing'; 
 import Footer from './components/Footer';
 
 export default function App() {
   const [cart, setCart] = useState([]);
   const [activeTab, setActiveTab] = useState('products');
-
 
   const handleAddToCart = (product) => {
     const isAlreadyInCart = cart.some(item => item.id === product.id);
@@ -23,19 +24,16 @@ export default function App() {
     toast.success(`${product.name} added to cart!`);
   };
 
-
   const handleRemoveFromCart = (productId) => {
     setCart(cart.filter(item => item.id !== productId));
     toast.error('Item removed from cart!');
   };
-
 
   const handleCheckout = () => {
     if (cart.length === 0) return;
     setCart([]);
     toast.info('Checkout successful! Cart cleared.');
   };
-
 
   const handleCartClick = () => {
     setActiveTab('cart');
@@ -59,6 +57,9 @@ export default function App() {
           activeTab={activeTab}
           setActiveTab={setActiveTab}
         />
+        {/* New sections added below */}
+        <Steps />
+        <Pricing />
       </main>
       
       <Footer />
