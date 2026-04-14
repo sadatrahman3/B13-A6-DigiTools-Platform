@@ -8,7 +8,7 @@ import Stats from './components/Stats';
 import Tools from './components/Tools';
 import Steps from './components/Steps';
 import Pricing from './components/Pricing';
-import CTA from './components/CTA'; 
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -18,33 +18,54 @@ export default function App() {
   const handleAddToCart = (product) => {
     const isAlreadyInCart = cart.some(item => item.id === product.id);
     if (isAlreadyInCart) {
-      toast.warning(`${product.name} is already in your cart!`);
+      toast.warning(`${product.name} is already in your cart!`, {
+        className: 'font-bold text-sm',
+      });
       return;
     }
     setCart([...cart, product]);
-    toast.success(`${product.name} added to cart!`);
+    toast.success(`${product.name} added to cart!`, {
+      icon: "🚀",
+      className: 'font-bold text-sm',
+    });
   };
 
   const handleRemoveFromCart = (productId) => {
     setCart(cart.filter(item => item.id !== productId));
-    toast.error('Item removed from cart!');
+    toast.error('Item removed from cart!', {
+      className: 'font-bold text-sm',
+    });
   };
 
   const handleCheckout = () => {
-    if (cart.length === 0) return;
+    if (cart.length === 0) {
+      toast.info('Your cart is empty!');
+      return;
+    }
     setCart([]);
-    toast.info('Checkout successful! Cart cleared.');
+    toast.info('Checkout successful! Cart cleared.', {
+      icon: "💳",
+      className: 'font-bold text-sm',
+    });
   };
 
   const handleCartClick = () => {
     setActiveTab('cart');
-    document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' });
+    const toolsSection = document.getElementById('tools');
+    if (toolsSection) {
+      toolsSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <div className="min-h-screen bg-base-100 selection:bg-primary/20">
-      <ToastContainer position="bottom-right" autoClose={2000} />
-      
+    <div className="min-h-screen bg-base-100 selection:bg-primary selection:text-primary-content">
+      <ToastContainer 
+        position="bottom-right" 
+        autoClose={2500} 
+        theme="colored"
+        newestOnTop
+      />
+
       <Navbar cartCount={cart.length} onCartClick={handleCartClick} />
       
       <main>
@@ -60,10 +81,10 @@ export default function App() {
         />
         <Steps />
         <Pricing />
-        <CTA /> 
+        <CTA />
       </main>
       
-      <Footer /> 
+      <Footer />
     </div>
   );
 }

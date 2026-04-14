@@ -7,19 +7,40 @@ const MainNavbar = ({ cartCount, onCartClick }) => {
         
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden p-2 mr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="4 6h16M4 12h16M4 18h7" />
-              </svg>
-            </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-1 p-4 shadow-xl bg-base-100 rounded-box w-64 gap-2 font-medium">
-              <li><a>Products</a></li>
-              <li><a>Features</a></li>
-              <li><a>Pricing</a></li>
-              <li><a>Testimonials</a></li>
-              <li><a>FAQ</a></li>
-            </ul>
-          </div>
+ 
+  <label tabIndex={0} className="btn btn-ghost lg:hidden p-2 mr-2 text-[#7C3AED] hover:bg-purple-50">
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      className="h-6 w-6" 
+      fill="none" 
+      viewBox="0 0 24 24" 
+      stroke="currentColor" 
+    >
+      <path 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        strokeWidth="2" 
+        d="M4 6h16M4 12h16M4 18h16" 
+      />
+    </svg>
+  </label>
+
+  {/* The Dropdown Menu */}
+  <ul 
+    tabIndex={0} 
+    className="menu menu-sm dropdown-content mt-3 z-100 p-4 shadow-2xl bg-white border border-gray-100 rounded-2xl w-64 gap-2 font-semibold text-[#1F2937]"
+  >
+    <li className="hover:text-[#7C3AED]"><a>Products</a></li>
+    <li className="hover:text-[#7C3AED]"><a>Features</a></li>
+    <li className="hover:text-[#7C3AED]"><a>Pricing</a></li>
+    <li className="hover:text-[#7C3AED]"><a>Testimonials</a></li>
+    <li className="hover:text-[#7C3AED]"><a>FAQ</a></li>
+    
+   
+    <div className="divider my-1"></div>
+    <li><a className="bg-purple-50 text-[#7C3AED]">Login</a></li>
+  </ul>
+</div>
           <a className="text-xl md:text-2xl font-extrabold tracking-tight text-secondary cursor-pointer">
             DigiTools
           </a>

@@ -1,4 +1,3 @@
-import React from 'react';
 import ToolCard from './ToolCard';
 import productsData from '../products.json';
 import { FaPenNib, FaPalette, FaCartShopping, FaCamera, FaGear, FaFileInvoice, FaBullhorn, FaBox, FaTrash } from 'react-icons/fa6';
@@ -6,7 +5,7 @@ import { FaPenNib, FaPalette, FaCartShopping, FaCamera, FaGear, FaFileInvoice, F
 const Tools = ({ cart, onAddToCart, onRemoveFromCart, onCheckout, activeTab, setActiveTab }) => {
   const totalCost = cart.reduce((sum, item) => sum + item.price, 0);
 
-  // Mapping for dynamic icon rendering in the cart view
+ 
   const Icons = { FaPenNib, FaPalette, FaCartShopping, FaCamera, FaGear, FaFileInvoice, FaBullhorn };
 
   return (
@@ -45,7 +44,7 @@ const Tools = ({ cart, onAddToCart, onRemoveFromCart, onCheckout, activeTab, set
           </div>
         </div>
 
-        {/* View Switcher */}
+      
         {activeTab === 'products' ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productsData.map((t) => (
