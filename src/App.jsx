@@ -1,5 +1,6 @@
-import React from 'react';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Stats from './components/Stats';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -7,10 +8,9 @@ export default function App() {
     <div className="min-h-screen bg-base-100">
       <Navbar cartCount={0} />
       <main>
-        <div className="py-20 text-center">
-          <h1 className="text-4xl font-bold">Project Initialized</h1>
-          <p>Setting up the DigiTools Platform...</p>
-        </div>
+        <Hero />
+        <Stats />
+        {/* Tools and other sections will go here later */}
       </main>
       <Footer />
     </div>
