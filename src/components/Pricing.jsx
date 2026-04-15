@@ -1,103 +1,97 @@
 import { FaCheck } from 'react-icons/fa6';
 
-const PricingTable = () => {
-  const starterFeatures = ['Access to 10 products', 'Basic templates', 'Community support', 'Single user account'];
-  const proFeatures = ['Ten next video generations', 'Unlimited generations', 'Priority support', 'Lifetime support', 'Cloud sync', 'Exclusive updates'];
-  const enterpriseFeatures = ['Everything in Pro', 'Unlimited users', 'Customizations', 'Personal content', 'Admin panel', 'Custom branding'];
+const MembershipOptions = () => {
+  const starterList = ['Access to 10 free tools', 'Basic templates', 'Community support', '1 project per month'];
+  const proList = ['Access to all premium tools', 'Unlimited templates', 'Priority support', 'Unlimited projects', 'Cloud sync', 'Advanced analytics'];
+  const enterpriseList = ['Everything in Pro', 'Team collaboration', 'Custom integrations', 'Dedicated support', 'SLA guarantee', 'Custom branding'];
 
   return (
-    <section className="bg-base-200 py-20 lg:py-32">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-base-content mb-6 tracking-tight">
+    <section className="bg-white py-20 sm:py-28 lg:py-36">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-6xl font-black text-[#1F2937] mb-6 tracking-tighter">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-base-content/60 text-base md:text-lg font-medium leading-relaxed">
-            Choose the plan that fits your needs. Map local current plan for more details.
+          <p className="max-w-xl mx-auto text-lg font-bold text-gray-500 leading-relaxed">
+            Choose the plan that fits your needs. Upgrade or downgrade anytime.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center max-w-7xl mx-auto">
-          <div className="card bg-base-100 shadow-xl border border-base-300 p-8 md:p-10 rounded-2xl h-full flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0 items-center">
+          
+          <div className="flex flex-col p-10 bg-white rounded-[3rem] lg:rounded-r-none border border-gray-100 shadow-sm relative z-0">
             <div className="mb-8">
-              <h3 className="text-xl font-bold text-base-content mb-2">Starter</h3>
-              <p className="text-sm text-base-content/50 font-semibold">Perfect for simple product start</p>
+              <h3 className="text-2xl font-black text-[#1F2937] mb-2">Starter</h3>
+              <p className="text-sm font-semibold text-gray-400 italic">Perfect for getting started</p>
             </div>
-            <div className="mb-8 flex items-baseline">
-              <span className="text-4xl md:text-5xl font-black text-base-content">$0</span>
-              <span className="text-base-content/40 font-bold ml-2">/Month</span>
+            <div className="flex items-baseline mb-10">
+              <span className="text-6xl font-black text-[#1F2937] tracking-tighter">$0</span>
+              <span className="ml-2 text-xs font-black text-gray-400 uppercase tracking-widest">/ month</span>
             </div>
-            <div className="space-y-5 mb-10 grow">
-              {starterFeatures.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-3 text-sm font-semibold text-base-content/70">
-                  <div className="mt-0.5 shrink-0">
-                    <FaCheck className="text-success" />
-                  </div>
-                  <span>{feature}</span>
+            <div className="grow space-y-5 mb-12">
+              {starterList.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-4 text-[15px] font-bold text-gray-500">
+                  <FaCheck className="text-green-500 shrink-0" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
-            <button className="btn btn-outline btn-primary w-full rounded-lg hover:scale-[1.03] active:scale-95 transition-transform">
-              Get Started Now
+            <button className="w-full py-5 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-3xl font-black text-sm uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-purple-200">
+              Get Started Free
             </button>
           </div>
 
-          <div className="card bg-primary text-primary-content shadow-2xl p-1 rounded-2xl lg:scale-105 z-20 h-full flex flex-col">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 badge badge-secondary py-4 px-6 font-bold tracking-widest text-[10px] uppercase shadow-lg">
+          <div className="flex flex-col p-10 md:p-14 bg-[#7C3AED] text-white rounded-[3.5rem] lg:scale-110 z-20 shadow-[0_40px_80px_-15px_rgba(124,58,237,0.3)] relative">
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FFD700] text-[#1F2937] px-6 py-2 rounded-full text-[10px] font-black tracking-[0.2em] uppercase shadow-xl">
               Most Popular
             </div>
-            <div className="p-8 md:p-10 flex flex-col h-full">
-              <div className="mb-8">
-                <h3 className="text-xl font-bold mb-2">Pro</h3>
-                <p className="text-sm opacity-80 font-semibold">For independent creators</p>
-              </div>
-              <div className="mb-8 flex items-baseline">
-                <span className="text-4xl md:text-5xl font-black">$29</span>
-                <span className="opacity-70 font-bold ml-2">/Month</span>
-              </div>
-              <div className="space-y-5 mb-10 grow">
-                {proFeatures.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3 text-sm font-semibold">
-                    <div className="mt-0.5 shrink-0">
-                      <FaCheck className="text-white" />
-                    </div>
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <button className="btn btn-neutral w-full rounded-lg border-none shadow-lg hover:scale-[1.03] active:scale-95 transition-transform">
-                Start Free Trial
-              </button>
-            </div>
-          </div>
-
-          <div className="card bg-base-100 shadow-xl border border-base-300 p-8 md:p-10 rounded-2xl h-full flex flex-col">
             <div className="mb-8">
-              <h3 className="text-xl font-bold text-base-content mb-2">Enterprise</h3>
-              <p className="text-sm text-base-content/50 font-semibold">For team and professionals</p>
+              <h3 className="text-2xl font-black mb-2">Pro</h3>
+              <p className="text-sm font-semibold text-white/70 italic">Best for professionals</p>
             </div>
-            <div className="mb-8 flex items-baseline">
-              <span className="text-4xl md:text-5xl font-black text-base-content">$99</span>
-              <span className="text-base-content/40 font-bold ml-2">/Month</span>
+            <div className="flex items-baseline mb-10">
+              <span className="text-6xl font-black tracking-tighter">$29</span>
+              <span className="ml-2 text-xs font-black text-white/60 uppercase tracking-widest">/ month</span>
             </div>
-            <div className="space-y-5 mb-10 grow">
-              {enterpriseFeatures.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-3 text-sm font-semibold text-base-content/70">
-                  <div className="mt-0.5 shrink-0">
-                    <FaCheck className="text-success" />
-                  </div>
-                  <span>{feature}</span>
+            <div className="grow space-y-5 mb-12">
+              {proList.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-4 text-[15px] font-bold">
+                  <FaCheck className="text-white shrink-0" />
+                  <span className="text-white">{item}</span>
                 </div>
               ))}
             </div>
-            <button className="btn btn-outline btn-primary w-full rounded-lg hover:scale-[1.03] active:scale-95 transition-transform">
+            <button className="w-full py-6 bg-white hover:bg-gray-50 text-[#7C3AED] rounded-3xl font-black text-sm uppercase tracking-widest shadow-2xl transition-all active:scale-95">
+              Start Pro Trial
+            </button>
+          </div>
+
+          <div className="flex flex-col p-10 bg-white rounded-[3rem] lg:rounded-l-none border border-gray-100 shadow-sm relative z-0">
+            <div className="mb-8">
+              <h3 className="text-2xl font-black text-[#1F2937] mb-2">Enterprise</h3>
+              <p className="text-sm font-semibold text-gray-400 italic">For teams and businesses</p>
+            </div>
+            <div className="flex items-baseline mb-10">
+              <span className="text-6xl font-black text-[#1F2937] tracking-tighter">$99</span>
+              <span className="ml-2 text-xs font-black text-gray-400 uppercase tracking-widest">/ month</span>
+            </div>
+            <div className="grow space-y-5 mb-12">
+              {enterpriseList.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-4 text-[15px] font-bold text-gray-500">
+                  <FaCheck className="text-green-500 shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+            <button className="w-full py-5 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-3xl font-black text-sm uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-purple-200">
               Contact Sales
             </button>
           </div>
+
         </div>
       </div>
     </section>
   );
 };
 
-export default PricingTable;
+export default MembershipOptions;

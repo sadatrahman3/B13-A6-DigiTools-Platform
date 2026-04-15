@@ -2,47 +2,48 @@ import { FaPlay } from 'react-icons/fa6';
 
 const MainHero = () => {
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden bg-base-100">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="relative py-12 md:py-20 lg:py-28 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          <div className="order-2 lg:order-1 text-center lg:text-left">
-            <span className="badge badge-primary badge-outline py-4 px-6 mb-8 text-sm font-semibold tracking-wide rounded-lg">
-              All New AI-Powered Productivity Tools
-            </span>
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EDE9FE] text-[#7C3AED] mb-8">
+              <div className="w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse"></div>
+              <span className="text-xs md:text-sm font-bold uppercase tracking-wider">New: AI-Powered Tools Available</span>
+            </div>
             
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-base-content tracking-normal">
-              Supercharge Your <br className="hidden sm:block" />
-              <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 text-[#1F2937] tracking-tight">
+              Supercharge Your <br />
+              <span className="bg-linear-to-r from-[#7C3AED] to-[#C026D3] bg-clip-text text-transparent">
                 Digital Workflow
               </span>
             </h1>
 
-            <p className="text-base-content/70 text-base md:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-loose">
-              Access premium AI tools, design assets, templates and productivity software all in one place. Start creating today for free.
+            <p className="text-[#6B7280] text-base md:text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+              Access premium AI tools, design assets, templates, and productivity software—all in one place. Start creating faster today.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-5">
-              <button className="btn btn-primary btn-lg rounded-xl px-12 w-full sm:w-auto hover:btn-active transition-transform active:scale-95 shadow-lg">
-                Browse Products
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
+              <button className="btn bg-[#7C3AED] hover:bg-[#6D28D9] border-none text-white px-10 h-14 rounded-full font-bold text-base normal-case shadow-xl shadow-purple-100 transition-all hover:scale-105 active:scale-95">
+                Explore Products
               </button>
               
-              <button className="group flex items-center gap-4 py-3 px-6 rounded-xl hover:bg-base-200 transition-all w-full sm:w-auto justify-center font-semibold">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white group-hover:scale-110 transition-transform shadow-md">
-                  <FaPlay size={14} className="ml-1" />
+              <button className="btn btn-outline border-[#D1D5DB] hover:bg-gray-50 hover:text-gray-900 px-8 h-14 rounded-full font-bold text-base normal-case gap-3 group transition-all">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#7C3AED]/10 group-hover:bg-[#7C3AED] transition-colors">
+                  <FaPlay size={10} className="text-[#7C3AED] group-hover:text-white ml-0.5" />
                 </div>
-                <span>Learn More</span>
+                <span className="text-[#4B5563]">Watch Demo</span>
               </button>
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 relative px-4 sm:px-10 lg:px-0">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-secondary/10 blur-3xl rounded-full -z-10 animate-soft-pulse"></div>
-            <div className="p-2 bg-base-200 rounded-3xl shadow-2xl">
+          <div className="relative">
+            <div className="absolute inset-0 bg-linear-to-tr from-[#7C3AED]/20 to-transparent blur-3xl rounded-full opacity-30"></div>
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-gray-100">
               <img 
-                src="/banner.png" 
-                alt="Productivity Dashboard" 
-                className="w-full rounded-2xl object-cover hover:scale-[1.02] transition-transform duration-700" 
+                src="banner.png" 
+                alt="Digital Workflow Visualization" 
+                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000" 
               />
             </div>
           </div>
